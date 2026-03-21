@@ -1,3 +1,7 @@
+# 目录结构
+---
+
+```text
 outputs/ggbond_oft/
 ├── unet/                # UNet 模型的 BOFT 微调权重
 │   └── {step}/          # 按训练步数保存的权重文件（500/1000/1500）
