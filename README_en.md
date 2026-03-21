@@ -1,7 +1,7 @@
 # GG_band_oft_sd1.5
 A customized AI image generation training project based on the Stable Diffusion v1.5 diffusion model, combined with the DreamBooth fine-tuning framework and BOFT (OFT) lightweight fine-tuning technology. The core objective is to enable the AI to generate cartoon images of GG Bond with specified styles and visual characteristics.
 
-## 📂 Project Structure
+## Project Structure
 
 ```bash
 GG_band_oft_sd1.5/
@@ -26,7 +26,7 @@ GG_band_oft_sd1.5/
 ├── inference_base_model.py    # Base model inference (Original SD1.5 testing)
 ├── inference_oft_model.py     # OFT model inference (Using fine-tuned weights)
 └── requirements.txt           # Project environment dependencies
-```bash
+```
 
 ## 🚀 Getting Started
 
@@ -38,7 +38,7 @@ cd GG_band_oft_sd1.5
 
 # Install required dependencies
 pip install -r requirements.txt
-```bash
+```
 
 ##  Data Preprocessing
 -Place the raw GG Bond (猪猪侠) image assets into the data/GG_band_raw/ directory.
@@ -54,7 +54,7 @@ cd boft_dreambooth
 
 # One-click start for training (Modify parameters in the .sh script as needed)
 bash train_dreambooth.sh
-```bash
+```
 
 ## Inference & Generation
 ```bash
@@ -63,10 +63,10 @@ python inference_base_model.py --prompt "GG Bond, cartoon, high quality" --outpu
 
 # Generate images using the fine-tuned OFT model
 python inference_oft_model.py --prompt "GG Bond, cartoon, high quality" --output_dir comparison/oft_after
-```bash
+```
 
 ## Performance Evaluation
 ```bash
 # Quantitatively evaluate the generation results (PSNR, SSIM, etc.)
 python evaluate.py --before_dir comparison/oft_before --after_dir comparison/oft_after
-```bash
+```
