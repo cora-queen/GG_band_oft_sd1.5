@@ -10,9 +10,9 @@ accelerate launch train_dreambooth_boft.py \
   --learning_rate=2e-4 \
   --lr_scheduler="constant" \
   --lr_warmup_steps=0 \
-  --max_train_steps=1000 \
-  --checkpointing_steps=200 \
-  --validation_steps=200 \
+  --max_train_steps=1500 \
+  --checkpointing_steps=500 \
+  --validation_steps=300 \
   --use_8bit_adam \
   --use_boft \
   --boft_bias="none" \
