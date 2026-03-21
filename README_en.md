@@ -41,7 +41,7 @@ pip install -r requirements.txt
 ```
 
 ##  Data Preprocessing
--Place the raw GG Bond (猪猪侠) image assets into the data/GG_band_raw/ directory.
+-Place the raw GG Bond image assets into the data/GG_band_raw/ directory.
 
 -Run the data/data_process.ipynb notebook to perform data cleaning, cropping, and normalization.
 
