@@ -31,10 +31,32 @@ GG_band_oft_sd1.5/
 
 ## 环境准备
 
-   ```bash
-   # 克隆项目
+# 克隆项目
 git clone https://github.com/your-username/GG_band_oft_sd1.5.git
 cd GG_band_oft_sd1.5
-
 # 安装依赖
 pip install -r requirements.txt
+
+## 数据预处理
+将猪猪侠原始图像素材放入 data/GG_band_raw/ 目录；
+运行 data/data_process.ipynb 笔记本，完成数据清洗、裁剪、归一化等预处理；
+预处理后的标准化数据会自动保存至 data/GG_band_processed/。
+
+## 模型微调
+# 进入训练模块目录
+cd boft_dreambooth
+
+# 一键启动训练（可根据需求修改sh脚本中的参数）
+bash train_dreambooth.sh
+
+## 推理生成
+基于 SD1.5 基础模型生成：
+python inference_base_model.py --prompt "猪猪侠 卡通 高清" --output_dir comparison/oft_before
+
+基于 OFT 微调后模型生成：
+python inference_oft_model.py --prompt "猪猪侠 卡通 高清" --output_dir comparison/oft_after
+
+## 效果评估
+
+# 量化评估模型生成效果（PSNR/SSIM等指标）
+python evaluate.py --before_dir comparison/oft_before --after_dir comparison/oft_after
