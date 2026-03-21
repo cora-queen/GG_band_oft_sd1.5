@@ -26,7 +26,7 @@ GG_band_oft_sd1.5/
 ├── inference_base_model.py    # 基模推理脚本：加载SD1.5基模进行猪猪侠图像生成推理
 ├── inference_oft_model.py     # OFT模型推理脚本：加载微调后的OFT模型进行猪猪侠图像生成推理
 └── requirements.txt           # 项目依赖
-
+```
 
 ## 环境准备
 
@@ -36,11 +36,12 @@ git clone https://github.com/your-username/GG_band_oft_sd1.5.git
 cd GG_band_oft_sd1.5
 # 安装依赖
 pip install -r requirements.txt
+```
 
 ## 数据预处理
-将猪猪侠原始图像素材放入 data/GG_band_raw/ 目录；
-运行 data/data_process.ipynb 笔记本，完成数据清洗、裁剪、归一化等预处理；
-预处理后的标准化数据会自动保存至 data/GG_band_processed/。
+-将猪猪侠原始图像素材放入 data/GG_band_raw/ 目录；
+-运行 data/data_process.ipynb 笔记本，完成数据清洗、裁剪、归一化等预处理；
+-预处理后的标准化数据会自动保存至 data/GG_band_processed/。
 
 ## 模型微调
 
@@ -49,6 +50,7 @@ pip install -r requirements.txt
 cd boft_dreambooth
 # 一键启动训练（可根据需求修改sh脚本中的参数）
 bash train_dreambooth.sh
+```
 
 ## 推理生成
 
@@ -57,9 +59,11 @@ bash train_dreambooth.sh
 python inference_base_model.py --prompt "猪猪侠 卡通 高清" --output_dir comparison/oft_before
 基于 OFT 微调后模型生成：
 python inference_oft_model.py --prompt "猪猪侠 卡通 高清" --output_dir comparison/oft_after
+```
 
 ## 效果评估
 
 ```bash
-# 量化评估模型生成效果（PSNR/SSIM等指标）
+# 量化评估模型生成效果
 python evaluate.py --before_dir comparison/oft_before --after_dir comparison/oft_after
+```
