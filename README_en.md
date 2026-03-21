@@ -26,3 +26,23 @@ GG_band_oft_sd1.5/
 ├── inference_base_model.py    # Base model inference (Original SD1.5 testing)
 ├── inference_oft_model.py     # OFT model inference (Using fine-tuned weights)
 └── requirements.txt           # Project environment dependencies
+
+## 🚀 Getting Started
+
+### 1. Environment Preparation
+```bash
+# Clone the repository
+git clone [https://github.com/your-username/GG_band_oft_sd1.5.git](https://github.com/your-username/GG_band_oft_sd1.5.git)
+cd GG_band_oft_sd1.5
+
+# Install required dependencies
+pip install -r requirements.txt
+
+## Data Preprocessing
+Place the raw GG Bond (猪猪侠) image assets into the data/GG_band_raw/ directory.
+
+Run the data/data_process.ipynb notebook to perform data cleaning, cropping, and normalization.
+
+The preprocessed standardized data will be automatically saved to data/GG_band_processed/.
+
+3. Model Fine-tuning
